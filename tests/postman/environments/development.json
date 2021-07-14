@@ -4,7 +4,7 @@
 	"values": [
 		{
 			"key": "baseUrl",
-			"value": "https://stormy-ocean-65831.herokuapp.com",
+			"value": "https://grupobabel-calc-test-env.herokuapp.com",
 			"enabled": true
 		}
 	],

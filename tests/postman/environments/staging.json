@@ -4,7 +4,7 @@
 	"values": [
 		{
 			"key": "baseUrl",
-			"value": "https://fvasquezintec-calc-staging.herokuapp.com",
+			"value": "https://grupobabel-calc-staging-env.herokuapp.com",
 			"enabled": true
 		}
 	],

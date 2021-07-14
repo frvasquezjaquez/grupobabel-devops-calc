@@ -24,3 +24,9 @@ coverage report -m --fail-under=80 #Falla sino llegamos al 80% de coverage
 ```
 behave tests/Integracion
 ```
+
+
+# Run App
+```
+    uvicorn --host 0.0.0.0 --port 8000 api:app
+```

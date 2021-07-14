@@ -1,14 +1,14 @@
 Feature: Sumar dos numeros
 
     Scenario Outline: Suma
-        Given que deseo sumar dos numeros
-        When yo ingrese los numeros <num1> y <num2>
-        Then El resultado <result> debe ser la suma de ambos
+        Given que quiero realizar operaciones aritméticas
+        When desee <operacion> <num1> y <num2>
+        Then el resultado debe ser <result>
         
         Examples: Suma de Numeros
-        | num1 | num2 | result  |
-        | 2    | 2    | 4       |
-        | 1    | 12   | 13      |
-        | 100  | 1000 | 1100    |
-        | 0    | 0    | 0       |
-        | 1    | -1   | Invalid |
+        | operacion | num1 | num2 | result  |
+        | sumar     | 2    | 2    | 4       |
+        | sumar     | 1    | 12   | 13      |
+        | sumar     | 100  | 1000 | 1100    |
+        | sumar     | 0    | 0    | 0       |
+        | sumar     | 1    | -1   | Invalid |

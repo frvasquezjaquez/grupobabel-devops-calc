@@ -1,0 +1,14 @@
+{
+	"id": "0c07cfa9-cf60-4017-9bfc-79b376c8ddfb",
+	"name": "staging",
+	"values": [
+		{
+			"key": "baseUrl",
+			"value": "https://grupobabel-calc-prod-env.herokuapp.com",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "staging",
+	"_postman_exported_at": "2021-06-26T01:12:41.102Z",
+	"_postman_exported_using": "Postman/8.5.1"
+}

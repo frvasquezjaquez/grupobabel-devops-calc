@@ -17,7 +17,7 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   deployDev:
-    name: "Deploy to Test Environment"
+    name: "Deploy to Test"
   
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -70,7 +70,7 @@ jobs:
         
   deployStaging:
 
-    name: "Deploy to Staging Environment"
+    name: "Deploy to Staging"
   
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -96,7 +96,7 @@ jobs:
 
   UAT:
 
-    name: "Run Users Acceptance Tests"
+    name: "Acceptance Tests"
 
   
     # The type of runner that the job will run on
@@ -110,7 +110,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2    
     
-      - name: TestDev
+      - name: Run Postman
         # You may pin to the exact commit or the version.
         # uses: matt-ball/newman-action@0659e9b8d056c0d03d94e1dbfce380512088b566
         uses: anthonyvscode/newman-action@v1.1
@@ -150,3 +150,34 @@ jobs:
           api_key: ${{secrets.HEROKU_API_TOKEN}}
           # Your Heroku App Name
           app_name: ${{ secrets.APP_NAME}}
+
+  smoke:
+
+    name: "Smoke Tests"
+
+  
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    
+    environment: production    
+    
+    needs: deployToProd
+    
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2    
+    
+      - name: Run Postman
+        # You may pin to the exact commit or the version.
+        # uses: matt-ball/newman-action@0659e9b8d056c0d03d94e1dbfce380512088b566
+        uses: anthonyvscode/newman-action@v1.1
+        
+        with:
+          # Postman API key
+          apiKey: ${{ secrets.POSTMAN_API_KEY }}
+          # Collection to use
+          collection: tests/postman/postmancollection.json
+          # Environment to use
+          environment: tests/postman/environments/production.json
+          # Path to CSV or JSON data file
+          iterationData: tests/postman/calc-test-data.csv

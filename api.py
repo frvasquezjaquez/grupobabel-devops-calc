@@ -6,7 +6,7 @@ calc = Calc()
 
 @app.get("/")
 def read_root():
-    return {"message": "Seamos como Fast, automaticemos nuestro proceso de despliegue."}
+    return {"message": "PreDemo Poder Judicial"}
 
 @app.get("/sumar")
 def read_sumar(num1: int = 0, num2: int = 0):

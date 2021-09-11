@@ -5,7 +5,7 @@ class Calc:
                 return "Invalid"
             return num1 + num2
         except Exception:
-            return "Excepcion"
+            return "Invalid"
 
     def restar(self, num1, num2):
         if num1 < 0 or num2 < 0:

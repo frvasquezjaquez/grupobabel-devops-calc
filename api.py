@@ -1,3 +1,4 @@
+import os
 from fastapi import FastAPI
 from calc import Calc
 
@@ -6,7 +7,11 @@ calc = Calc()
 
 @app.get("/")
 def read_root():
-    return {"message": "Fast Ama los Contenedores"}
+    return {"container_id": os.environ.get('HOSTNAME') or "Running in cloud"}
+
+@app.get("/health")
+def read_root():
+    return {"status": "DevOps Days - Mi Primer Container Cloud"}
 
 @app.get("/sumar")
 def read_sumar(num1: int = 0, num2: int = 0):

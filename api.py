@@ -1,6 +1,6 @@
 import os
 from fastapi import FastAPI
-from calc import Calc
+from calc import Calc 
 
 app = FastAPI()
 calc = Calc()
